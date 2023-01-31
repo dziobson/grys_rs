@@ -9,9 +9,9 @@ pcf8574:
     pcf8575: true
     i2c_id: bus_b 
 
-switch:
-    
-  - platform: gpio
+output:
+
+- platform: gpio
     id: relay_1
     name: "$node Relay_01"
     pin:
