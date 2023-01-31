@@ -1,0 +1,811 @@
+#i2c addresses
+# address: 0x26 input pcf io
+# address: 0x27 input pcf io
+# address: 0x3C input oled
+# address: 0x40 input ina219 power
+# address: 0x68 input rtc ds1307
+
+binary_sensor:
+
+  - platform: gpio
+    name: "$node IN_01"
+    pin:
+      pcf8574: pcf_input_2
+      number: 13
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_1
+  - platform: gpio
+    name: "$node IN_02"
+    pin:
+      pcf8574: pcf_input_2
+      number: 12
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_2
+  - platform: gpio
+    name: "$node IN_03"
+    pin:
+      pcf8574: pcf_input_2
+      number: 11
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_3
+  - platform: gpio
+    name: "$node IN_04"
+    pin:
+      pcf8574: pcf_input_2
+      number: 10
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_4
+  - platform: gpio
+    name: "$node IN_05"
+    pin:
+      pcf8574: pcf_input_2
+      number: 9
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_5
+  - platform: gpio
+    name: "$node IN_06"
+    pin:
+      pcf8574: pcf_input_2
+      number: 8
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_6
+  - platform: gpio
+    name: "$node IN_07"
+    pin:
+      pcf8574: pcf_input_2
+      number: 7
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_7
+  - platform: gpio
+    name: "$node IN_08"
+    pin:
+      pcf8574: pcf_input_2
+      number: 6
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_8
+  - platform: gpio
+    name: "$node IN_09"
+    pin:
+      pcf8574: pcf_input_1
+      number: 8
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_9
+  - platform: gpio
+    name: "$node IN_10"
+    pin:
+      number: 34
+      mode:
+        input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_10
+  - platform: gpio
+    name: "$node IN_11"
+    pin:
+      pcf8574: pcf_input_1
+      number: 9
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_11
+  - platform: gpio
+    name: "$node IN_12"
+    pin:
+      pcf8574: pcf_input_1
+      number: 10
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_12
+  - platform: gpio
+    name: "$node IN_13"
+    pin:
+      pcf8574: pcf_input_1
+      number: 7
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_13
+  - platform: gpio
+    name: "$node IN_14"
+    pin:
+      pcf8574: pcf_input_1
+      number: 6
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_14
+  - platform: gpio
+    name: "$node IN_15"
+    pin:
+      pcf8574: pcf_input_1
+      number: 5
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_15
+  - platform: gpio
+    name: "$node IN_16"
+    pin:
+      pcf8574: pcf_input_1
+      number: 4
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_16
+  - platform: gpio
+    name: "$node IN_17"
+    pin:
+      pcf8574: pcf_input_1
+      number: 3
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_17
+  - platform: gpio
+    name: "$node IN_18"
+    pin:
+      pcf8574: pcf_input_1
+      number: 2
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_18
+  - platform: gpio
+    name: "$node IN_19"
+    pin:
+      pcf8574: pcf_input_1
+      number: 1
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_19
+  - platform: gpio
+    name: "$node IN_20"
+    pin:
+      pcf8574: pcf_input_1
+      number: 0
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_20
+  - platform: gpio
+    name: "$node IN_21"
+    pin:
+      pcf8574: pcf_input_1
+      number: 11
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_21
+  - platform: gpio
+    name: "$node IN_22"
+    pin:
+      pcf8574: pcf_input_1
+      number: 12
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_22
+  - platform: gpio
+    name: "$node IN_23"
+    pin:
+      pcf8574: pcf_input_1
+      number: 13
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_23
+  - platform: gpio
+    name: "$node IN_24"
+    pin:
+      pcf8574: pcf_input_1
+      number: 14
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_24
+  - platform: gpio
+    name: "$node IN_25"
+    pin:
+      pcf8574: pcf_input_1
+      number: 15
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_25
+  - platform: gpio
+    name: "$node IN_26"
+    pin:
+      pcf8574: pcf_input_3
+      number: 15
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_26
+  - platform: gpio
+    name: "$node IN_27"
+    pin:
+      pcf8574: pcf_input_3
+      number: 14
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_27
+  - platform: gpio
+    name: "$node IN_28"
+    pin:
+      pcf8574: pcf_input_3
+      number: 13
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_28
+  - platform: gpio
+    name: "$node IN_29"
+    pin:
+      pcf8574: pcf_input_2
+      number: 14
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_29
+  - platform: gpio
+    name: "$node IN_30"
+    pin:
+      pcf8574: pcf_input_2
+      number: 15
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_30
+  - platform: gpio
+    name: "$node IN_31"
+    pin:
+      pcf8574: pcf_input_2
+      number: 5
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_31
+  - platform: gpio
+    name: "$node IN_32"
+    pin:
+      pcf8574: pcf_input_2
+      number: 4
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_32
+  - platform: gpio
+    name: "$node IN_33"
+    pin:
+      pcf8574: pcf_input_2
+      number: 3
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_33
+          
+  - platform: gpio
+    name: "$node IN_34"
+    pin:
+      pcf8574: pcf_input_2
+      number: 2
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_34
+
+  - platform: gpio
+    name: "$node IN_35"
+    pin:
+      pcf8574: pcf_input_2
+      number: 1
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_35
+      
+  - platform: gpio
+    name: "$node IN_36"
+    pin:
+      pcf8574: pcf_input_2
+      number: 0
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_36
+      
+  - platform: gpio
+    name: "$node IN_37"
+    pin:
+      pcf8574: pcf_input_3
+      number: 7
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_37
+      
+  - platform: gpio
+    name: "$node IN_38"
+    pin:
+      pcf8574: pcf_input_3
+      number: 6
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_38
+      
+  - platform: gpio
+    name: "$node IN_39"
+    pin:
+      pcf8574: pcf_input_3
+      number: 5
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_39
+      
+  - platform: gpio
+    name: "$node IN_40"
+    pin:
+      pcf8574: pcf_input_3
+      number: 4
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_40
+      
+  - platform: gpio
+    name: "$node IN_41"
+    pin:
+      pcf8574: pcf_input_3
+      number: 3
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_41
+      
+  - platform: gpio
+    name: "$node IN_42"
+    pin:
+      pcf8574: pcf_input_3
+      number: 2
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_42
+      
+  - platform: gpio
+    name: "$node IN_43"
+    pin:
+      pcf8574: pcf_input_3
+      number: 1
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_43
+      
+  - platform: gpio
+    name: "$node IN_44"
+    pin:
+      pcf8574: pcf_input_3
+      number: 0
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_44
+      
+  - platform: gpio
+    name: "$node IN_45"
+    pin:
+      pcf8574: pcf_input_3
+      number: 8
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_45
+      
+  - platform: gpio
+    name: "$node IN_46"
+    pin:
+      pcf8574: pcf_input_3
+      number: 9
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_46
+      
+  - platform: gpio
+    name: "$node IN_47"
+    pin:
+      pcf8574: pcf_input_3
+      number: 10
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_47
+      
+  - platform: gpio
+    name: "$node IN_48"
+    pin:
+      pcf8574: pcf_input_3
+      number: 11
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_48
+      
+
+  - platform: gpio
+    name: "$node IN_49"
+    pin:
+      pcf8574: pcf_input_3
+      number: 12
+      mode:
+       input: true
+      inverted: true
+    on_press:
+      then:
+        - if:
+            condition:
+              not:
+                api.connected:
+            then:
+              - switch.toggle: relay_48
+      
+
