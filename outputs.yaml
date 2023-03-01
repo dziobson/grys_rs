@@ -9,7 +9,7 @@ pcf8574:
     pcf8575: true
     i2c_id: bus_b 
 
-output:
+switch:
 
 - platform: gpio
     id: relay_1
